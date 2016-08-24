@@ -1,10 +1,10 @@
 "use strict";
 
 let mongoose = require('mongoose');
-let schema = mongoose.Schema;
+let Schema = mongoose.Schema;
 
-let bearSchema = new Schema({
-  name: string;
+let BearSchema = new Schema({
+  name: String
 });
 
 module.exports = mongoose.model('Bear', BearSchema);
