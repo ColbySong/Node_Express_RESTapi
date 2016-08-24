@@ -20,7 +20,8 @@ let router = express.Router();
 
 // middleware - gets called for all requests
 router.use((req,res,next) => {
-  console.log("incoming request" + req);
+  console.log(req.method);
+  console.log(req.headers);
   next(); // pass on request to the routes below
 });
 
