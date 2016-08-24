@@ -1,3 +1,6 @@
+"use strict";
+
+// import appropiate packages
 let express =  require('express');
 let app =  express();
 let bodyParser = require('body-parser');
@@ -7,6 +10,7 @@ app.use(bodyParser.json());
 
 let port = process.env.PORT || 8080;
 
+// routing
 let router = express.Router();
 
 router.get('/', (req, res) => {
@@ -15,5 +19,6 @@ router.get('/', (req, res) => {
 
 app.use('/api', router);
 
+// starting server
 app.listen(port);
 console.log("server is running on port" + port);
