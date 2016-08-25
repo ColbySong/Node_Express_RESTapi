@@ -3,8 +3,8 @@
 let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
-let BearSchema = new Schema({
+let PersonSchema = new Schema({
   name: String
 });
 
-module.exports = mongoose.model('Bear', BearSchema);
+module.exports = mongoose.model('Person', PersonSchema);

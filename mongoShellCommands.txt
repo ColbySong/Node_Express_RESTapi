@@ -1,0 +1,5 @@
+mongo
+show dbs
+use [datebase name]
+db.getCollectionNames()
+db.[collection name].find()
