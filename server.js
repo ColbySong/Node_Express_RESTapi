@@ -71,7 +71,7 @@ router.route('/people/:id').get((req, res) => {
 });
 
 // PUT route for updating a person by id
-router.route('people/:id').put((req, res) => {
+router.route('/people/:id').put((req, res) => {
   Person.findById(req.params.id, (err, person) => {
     if (err) {
       res.send(err);
@@ -92,7 +92,7 @@ router.route('people/:id').put((req, res) => {
 });
 
 // DELETE route for deleting a person by id
-router.route('people/:id').delete((req, res) => {
+router.route('/people/:id').delete((req, res) => {
   Person.remove({ _id: req.params.id }, (err) => {
     if (err) {
       res.send(err);
