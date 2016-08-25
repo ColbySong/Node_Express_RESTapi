@@ -60,3 +60,57 @@ A JSON array of person objects
  }
 ]
 ```
+
+Retrieve single person by ID
+----------------------------
+```shell
+GET api/people/{id}
+```
+### Response
++ 200 OK
+```json
+ {
+   "_id": "57bf34a25a820c617f000002",
+   "name": "steve",
+   "__v": 0
+ }
+```
+
+Delete person by ID
+-------------------
+```shell
+DELETE api/people/{id}
+```
+### Response
++ 200 OK
+```json
+{ 
+   "message": "person deleted"
+}
+```
+
+Update person by ID
+-------------------
+```shell
+PUT api/people/{id}
+```
+
+### Request Body
+* `name` - name of the person
+```json
+{  
+
+   "name": "Alan"
+   
+}
+```
+
+### Response
++ 200 OK
+```json
+{
+
+   "message": "person updated"
+
+}
+```
