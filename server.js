@@ -48,6 +48,7 @@ router.route('/people').post((req, res) => {
   });
 });
 
+// GET route for retrieve people
 router.route('/people').get((req, res) => {
   Person.find((err, people) => {
     if (err) {
@@ -58,7 +59,16 @@ router.route('/people').get((req, res) => {
   });
 });
 
-// GET route for retrieving people
+// GET route for retrieving a specific person
+router.route('/people/:id').get((req, res) => {
+  Person.findById(req.params.id, (err, person) => {
+    if (err) {
+      res.send(err);
+    } else {
+      res.json(person);
+    }
+  });
+});
 
 
 // ---------------------------------------------------------------------------
