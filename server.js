@@ -48,7 +48,7 @@ router.route('/people').post((req, res) => {
   });
 });
 
-// GET route for retrieve people
+// GET route for retrieving people
 router.route('/people').get((req, res) => {
   Person.find((err, people) => {
     if (err) {
@@ -59,13 +59,45 @@ router.route('/people').get((req, res) => {
   });
 });
 
-// GET route for retrieving a specific person
+// GET route for retreiving a person by id
 router.route('/people/:id').get((req, res) => {
   Person.findById(req.params.id, (err, person) => {
     if (err) {
       res.send(err);
     } else {
       res.json(person);
+    }
+  });
+});
+
+// PUT route for updating a person by id
+router.route('people/:id').put((req, res) => {
+  Person.findById(req.params.id, (err, person) => {
+    if (err) {
+      res.send(err);
+    } else {
+      console.log("original name " + person.name);
+      person.name = req.body.name;
+      console.log("new name " + person.name);
+    }
+
+    person.save((err) => {
+      if (err) {
+        res.send(err);
+      } else {
+        res.json({ message: 'person updated'});
+      }
+    });
+  });
+});
+
+// DELETE route for deleting a person by id
+router.route('people/:id').delete((req, res) => {
+  Person.remove({ _id: req.params.id }, (err) => {
+    if (err) {
+      res.send(err);
+    } else {
+      res.json({ message: "person deleted"});
     }
   });
 });
