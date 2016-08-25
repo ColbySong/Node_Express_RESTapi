@@ -10,3 +10,7 @@ A simple REST API template project supporting CRUD for a resource
 - To start Mongo for Linux `sudo service mongod start`
 - check in /var/log/mongodb/mongod.log for "waiting for connections on port <port>" (27017 by default)
 - To stop Mongo `sudo service mongod stop`
+
+## API documentation
+
+- refer to api.md 
